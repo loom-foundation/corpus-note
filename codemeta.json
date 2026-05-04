@@ -1,0 +1,15 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "CreativeWork",
+  "name": "Note",
+  "description": "A methodology for capturing intent (needs, requirements, specification, and design) as plain-text, Git-native artifacts that any actor with file access can read and author.",
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "The Loom Method"
+  },
+  "license": "https://spdx.org/licenses/CC-BY-4.0",
+  "author": {
+    "@type": "Person",
+    "name": "Bruno Almeida do Lago"
+  }
+}

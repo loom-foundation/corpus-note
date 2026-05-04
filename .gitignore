@@ -1,0 +1,73 @@
+# Keeps repositories free of secrets, OS junk, editor files, and per-user AI-agent artefacts.
+# Canonical source: manifest/repo-template/.
+
+# ── Secrets: never commit ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon?
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# ── Windows ──────────────────────────────────────────────────────────────────
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# ── Linux ────────────────────────────────────────────────────────────────────
+*~
+.directory
+.Trash-*
+.nfs*
+
+# ── Editors ──────────────────────────────────────────────────────────────────
+*.swp
+*.swo
+*.swn
+.idea/
+*.iml
+
+# ── Node ─────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+.venv/
+
+# ── AI agents ────────────────────────────────────────────────────────────────
+_agents/
+.agents/
+.aider/
+.claude/
+.cline/
+.codeium/
+.codex/
+.cody/
+.continue/
+.copilot/
+.cursor/
+.windsurf/
+.zed/

@@ -1,0 +1,10 @@
+#!/bin/sh
+# All corpus checks. CI runs exactly this.
+# unittest exits 5 when no tests exist yet; that is not a failure.
+set -eu
+cd "$(dirname "$0")"
+python3 -m unittest discover -s tests -v || {
+  s=$?
+  [ "$s" -eq 5 ] && exit 0
+  exit "$s"
+}

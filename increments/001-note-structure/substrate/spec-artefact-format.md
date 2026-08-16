@@ -52,7 +52,9 @@ What a rename breaks is everything the owner cannot edit: citations already fixe
 
 The `kind` field carries the kind token, and every kind carries exactly one segment, an abbreviation no other kind shares, a structural fact the model fixes ([The structural schema](../normalised-data-model/rec-schema.md){id=note:rec:jnj07t4}).
 The kind-segment in the id is rendered from the authoritative `kind` field.
+The field earns its place beside the segment: it lets the file self-describe with no register in hand, it is the frontmatter surface tools, templates, and kind declarations read, and it is the authority a wrong segment repairs from.
 A well-formed token no register defines still makes an artefact; the unknown token is reported as a warning, never a bar on the file.
+Such a kind is written in full in `kind`, its segment an abbreviation the author chooses; the choice is provisional until a register defines the kind and canonical once one does.
 A segment disagreeing with `kind`, in an artefact's own id as in any other spelling of it, is a display defect reported with the canonical rendering proposed, never a failure of the id to denote.
 A segment already fixed in an immutable surface, a commit trailer or a published copy, records the target's kind as of the citation and is read historically; it is never a defect and never repaired.
 

@@ -40,6 +40,7 @@ A segment already fixed where you cannot edit, a commit message for instance, ke
 To find every mention of a note, match the namespace and the opaque, never the full spelling, which a wrong segment could hide.
 
 A well-formed kind token nothing yet defines still makes a note; the unknown token is a warning, never a bar on the file.
+For such a kind, write the full token in `kind` and choose your own abbreviation for the id; your choice is provisional until the kind is defined, and the defined one is then canonical.
 
 ## The opaque
 

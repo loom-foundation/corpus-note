@@ -20,7 +20,7 @@ At this increment the schema holds the atom: the artefact with its identity, and
 
 - A row of the artefact table is one markdown file; its columns appear as the YAML frontmatter fields `id`, `name`, `kind`, and `status`.
 - The id's parts are the artefact's key: the namespace and the opaque are its identity, and the middle segment is rendered from `kind` through the kind's one segment.
-- A kind's segment and home domain are facts of the model; an artefact's file carries the kind token alone.
+- A kind's segment is a fact of the model; an artefact's file carries the kind token alone.
 - A constraint the medium cannot enforce is stated in the schema anyway and recorded in its unenforced-constraints register; each such constraint remains checkable from the record.
 
 ## Relations

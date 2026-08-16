@@ -5,12 +5,10 @@
 -- implements the model as faithfully as the medium allows.
 -- This first slice holds the atom: the plain note file and its identity.
 
--- The register of kinds: each kind token carries one id segment and
--- belongs to exactly one domain.
+-- The register of kinds: each kind token carries one id segment.
 CREATE TABLE kind (
     token        VARCHAR(32) NOT NULL,  -- the kind token, authoritative for the segment
     segment      VARCHAR(8)  NOT NULL,  -- the id's middle segment, rendered from the token
-    home_domain  VARCHAR(32) NOT NULL,  -- the one domain the kind belongs to
     CONSTRAINT pk_kind PRIMARY KEY (token),
     CONSTRAINT uq_kind_segment UNIQUE (segment),
     CONSTRAINT ck_kind_token_lowercase CHECK (token = LOWER(token)),
@@ -25,7 +23,7 @@ CREATE TABLE artefact (
     namespace  VARCHAR(64)  NOT NULL,  -- the id's first segment, declared once in the manifest
     opaque     VARCHAR(64)  NOT NULL,  -- the id's last segment, minted once
     kind       VARCHAR(32)  NOT NULL,  -- the kind token, authoritative for the id's middle segment
-    name       VARCHAR(255) NOT NULL,  -- a concise label, never a summary
+    name       VARCHAR(255) NOT NULL,  -- a concise label
     status     VARCHAR(16)  NOT NULL,  -- a required token; this slice fixes no value set
     CONSTRAINT pk_artefact PRIMARY KEY (namespace, opaque),
     CONSTRAINT fk_artefact_kind FOREIGN KEY (kind) REFERENCES kind (token),
@@ -35,8 +33,8 @@ CREATE TABLE artefact (
 
 -- =====================================================================
 -- UNENFORCED-CONSTRAINTS REGISTER
--- Constraints the model states that neither this DDL subset nor the
--- markdown medium enforces; each is checkable from the record.
+-- Constraints the model states that the markdown medium cannot enforce,
+-- some beyond this DDL subset too; each is checkable from the record.
 -- =====================================================================
 -- artefact.opaque: lowercase Crockford Base32 (0 to 9 and a to z, minus
 --   i, l, o, u), compared case-insensitively. No portable check
@@ -54,5 +52,3 @@ CREATE TABLE artefact (
 --   states.
 -- kind.token: lowercase words joined by single hyphens; the lowercase
 --   check holds, the hyphen shape has no portable constraint.
--- kind.home_domain: every kind belongs to exactly one domain; this
---   slice fixes no roster of domains.

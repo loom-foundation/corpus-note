@@ -43,7 +43,7 @@ It is chosen short, lowercase, and distinctive, because it partitions the identi
 
 ### The kind and its segment
 
-The `kind` field carries the kind token, and every kind carries exactly one segment, an abbreviation no other kind shares; every kind belongs to exactly one domain, a structural fact the model fixes ([The structural schema](../normalised-data-model/rec-schema.md){id=note:rec:jnj07t4}).
+The `kind` field carries the kind token, and every kind carries exactly one segment, an abbreviation no other kind shares, a structural fact the model fixes ([The structural schema](../normalised-data-model/rec-schema.md){id=note:rec:jnj07t4}).
 The kind-segment in the id is rendered from the authoritative `kind` field.
 
 ### The opaque
@@ -61,7 +61,7 @@ The id is minted once and never changes; a move, a rename, or a revision leaves 
 
 ### Minting an id by hand
 
-Draw the opaque's characters from the alphabet above; confirm the string appears nowhere in the corpus (`grep -r`); assemble the id from the namespace, the segment the artefact's `kind` derives, and the opaque.
+Draw the opaque's characters from the alphabet above; confirm the string appears nowhere in the corpus (`grep -r`); assemble the id from the namespace, the segment rendered from the artefact's `kind`, and the opaque.
 A tool draws from a secure random source and checks the same way.
 
 ## Why opaques

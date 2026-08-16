@@ -1,7 +1,6 @@
 # Identifiers
 
-An id names one note, permanently.
-It is three colon-separated segments:
+Note IDs are composed of three colon-separated segments:
 
 ```
 id = namespace:kind:opaque
@@ -16,21 +15,19 @@ flowchart LR
     ns["<b>garden</b><br>identity (the namespace)"] ~~~ seg["<b>idea</b><br>display (from kind)"] ~~~ op["<b>7fjq3ka</b><br>identity (the opaque)"]
 ```
 
-In words: the outer segments, the namespace and the opaque, are the identity; the middle segment is display, rendered from the note's `kind`.
-
 ## The namespace
 
 The namespace names the one body of work whose notes the corpus holds, declared once for the whole corpus.
 
+> [!IMPORTANT]
+> Renaming it later may break citations fixed in commit history or someone else's notes citing yours under the old name, so choose it as if it were permanent.
+
 Choose it short, lowercase, and distinctive, because it partitions the identity space: distinct bodies of work under distinct namespaces never collide, and two that chose the same name cannot be brought into one working context without their ids meaning two things at once.
 
-Anchoring it to something already globally registered that you control, a domain or a repository, removes that collision for free.
+> [!TIP]
+> Anchor it to a name already registered to you, a domain or a repository, to reduce the probability of collisions with other corpora.
 
-Renaming it later is a mechanical find-and-replace in everything you can edit, your notes and your code included; the opaques survive unchanged.
-What it breaks is everything you cannot edit: citations already fixed in commit history, and citations held by other people's work.
-Choose it as if it were permanent.
-
-## The kind segment
+## The kind
 
 The note's `kind` field is authoritative; the segment in the id is rendered from it.
 Every kind carries exactly one segment, a short form no other kind shares.
@@ -53,12 +50,19 @@ The opaque is a Crockford Base32 string, lowercase, compared case-insensitively:
 (`i`, `l`, `o` and `u` are excluded.)
 It is unique within its namespace across every kind.
 
-Its default length is seven characters; each corpus configures its own length, and the declared length governs new ids only.
+Its default length is seven characters.
+
+Each corpus configures its own length, and the declared length governs new ids only.
+
 Mixed lengths are lawful within one namespace, and two opaques of different lengths never collide, so raising the length widens the space for new ids with no re-mint.
 
-## Equality
+> [!NOTE]
+> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](../explanation/why-opaque-ids.md).
+
+## Comparing ids
 
 Two ids name the same note exactly when their namespaces and their opaques are equal, the opaques compared case-insensitively.
+
 The segment plays no part in equality.
 
 ## Immutability

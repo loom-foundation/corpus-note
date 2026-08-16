@@ -23,7 +23,7 @@ Every id starts with a namespace, the name of the body of work your notes belong
 This tutorial's body of work is a garden, so the namespace is `garden`.
 
 > [!TIP]
-> Anchor it to a name already registered to you, a domain or a repository, and no one else's ids can ever collide with yours.
+> Anchor it to a name already registered to you, a domain or a repository, to reduce the probability of collisions with other corpora.
 
 ## 3. Mint an id
 

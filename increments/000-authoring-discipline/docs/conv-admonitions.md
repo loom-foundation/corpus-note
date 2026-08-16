@@ -16,7 +16,7 @@ Each type carries the meaning GitHub gives it in [Alerts](https://docs.github.co
 - WARNING: "Urgent info that needs immediate user attention to avoid problems."
 - CAUTION: "Advises about risks or negative outcomes of certain actions."
 
-In the source an alert is a blockquote, so the pages stay self-contained plain markdown and degrade to a quoted paragraph wherever alerts are not rendered.
+In the source an alert is a blockquote and degrades to a quoted paragraph wherever alerts are not rendered, within the self-containment that [The documentation follows Diátaxis](./dec-docs-structure.md){id=note:dec:pe53ssv} fixes.
 
 ## Rationale
 

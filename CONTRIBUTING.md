@@ -24,6 +24,7 @@ Use your real name and a reachable email. There is no CLA to sign.
 
 ## How to contribute
 
+- Enable the repository checks before your first commit: `git config core.hooksPath hooks`. Every commit then runs `./check`, the same command CI runs.
 - Before authoring, read `meta/README.md` and `meta/compartmentalization.md`. This corpus defines Note using Note, so it keeps the method, what Note is for any adopter, separate from how this repository authors it; Method artifacts are written for any sustained body of work, not for this corpus in particular.
 - For methodology artifacts (needs, requirements, specifications, decision records, terms, personas), follow the principles in `loom/note/principles/`, the per-kind rules carried by the terms and the artifact-file-format specification under `loom/note/`, and the prose conventions in `meta/prose-conventions.md`; `docs/` carries worked authoring guidance.
 - Open an issue or a discussion to propose a change before a large piece of work; substantial design choices are recorded as decision records under `loom/note/decisions/`.

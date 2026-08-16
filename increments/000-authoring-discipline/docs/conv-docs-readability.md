@@ -2,7 +2,7 @@
 id: note:conv:h8zkcc8
 name: Documentation reads easy on the eyes
 kind: convention
-status: draft
+status: current
 ---
 
 Documentation prose is set in short paragraphs, a blank line between idea groups, never a dense block, even at the cost of vertical space.

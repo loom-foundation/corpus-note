@@ -2,7 +2,7 @@
 id: note:dec:dxrk5bn
 name: Identity is a namespace and an opaque
 kind: decision
-status: draft
+status: current
 ---
 
 An artefact's identity is its namespace and its opaque, drawn from Crockford Base32 under one grammar for every kind.

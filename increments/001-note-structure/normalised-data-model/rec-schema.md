@@ -2,7 +2,7 @@
 id: note:rec:jnj07t4
 name: The structural schema
 kind: record
-status: draft
+status: current
 payload: /data/schema.sql
 ---
 

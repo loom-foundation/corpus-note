@@ -2,7 +2,7 @@
 id: note:spec:vzj9nfv
 name: The artefact format
 kind: specification
-status: draft
+status: current
 ---
 
 This specification fixes what makes a file a Note artefact: the file envelope and the identity scheme.

@@ -2,7 +2,7 @@
 id: note:spec:wdq47xk
 name: The documentation structure
 kind: specification
-status: draft
+status: current
 ---
 
 This specification fixes the operational shape of the end-user documentation: the tree, the job of each page, the front door, self-containment, and the worked examples.

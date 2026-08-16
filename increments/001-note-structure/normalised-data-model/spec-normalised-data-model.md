@@ -2,7 +2,7 @@
 id: note:spec:1hq5yrh
 name: The normalised data model
 kind: specification
-status: draft
+status: current
 ---
 
 Note's structure is specified in one normalised data model, written in ANSI SQL DDL because it yields well to the modelling task.

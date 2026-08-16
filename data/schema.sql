@@ -34,21 +34,35 @@ CREATE TABLE artefact (
 -- =====================================================================
 -- UNENFORCED-CONSTRAINTS REGISTER
 -- Constraints the model states that the markdown medium cannot enforce,
--- some beyond this DDL subset too; each is checkable from the record.
+-- some beyond this DDL subset too; each names what compensates for it,
+-- or an honest none, and each is checkable from the record.
 -- =====================================================================
 -- artefact.opaque: lowercase Crockford Base32 (0 to 9 and a to z, minus
 --   i, l, o, u), compared case-insensitively. No portable check
---   constraint states a character class.
--- artefact.opaque: the default length is seven; mixed lengths are lawful
+--   constraint states a character class. Compensated by nothing yet;
+--   the rule is checkable from any id alone.
+-- artefact.opaque: the default length is seven, configured per corpus in
+--   its manifest and governing new ids only; mixed lengths are lawful
 --   within one namespace, and opaques of different lengths never
 --   collide. The typed bound above is storage, not the rule.
+--   Compensated by nothing yet.
 -- pk_artefact: nothing in one file enforces uniqueness of the opaque
---   within its namespace; a sweep across the corpus decides it.
+--   within its namespace; a sweep wherever the namespace is kept
+--   decides it. Compensated by the mint procedure's collision grep,
+--   run in every repository holding the namespace.
 -- fk_artefact_kind: stricter than the medium. A well-formed token no
 --   register defines still makes an artefact; the unknown token is a
---   warning, never a bar on the file.
+--   warning, never a bar on the file. Compensated by the warning-tier
+--   report; nothing refuses the file.
 -- artefact identity: an id is minted once and never changes; a move or
 --   a rename leaves it untouched. Immutability is history, which no DDL
---   states.
--- kind.token: lowercase words joined by single hyphens; the lowercase
---   check holds, the hyphen shape has no portable constraint.
+--   states. Compensated by review over git history; a changed id reads
+--   as a new artefact.
+-- kind.token: lowercase letters with single hyphens between words; the
+--   lowercase check holds, the letters-and-hyphens shape has no
+--   portable constraint. Compensated by nothing yet; checkable from
+--   the kind register.
+-- kind.segment: two to five characters; the typed bound above is
+--   storage, not the rule, and no portable length function sits in the
+--   ANSI-and-SQLite intersection this corpus fixes. Compensated by the
+--   kind register and the abbreviation-planning review.

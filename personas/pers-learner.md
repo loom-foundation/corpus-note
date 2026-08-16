@@ -5,4 +5,4 @@ kind: persona
 status: current
 ---
 
-A person or AI agent anywhere in the world meeting Note for the first time, with no prior knowledge of the method.
+A person or AI agent meeting Note for the first time, with no prior knowledge of the method.

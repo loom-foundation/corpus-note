@@ -1,8 +1,16 @@
 # Note
 
-Note is a method for capturing intent (needs, requirements, specifications, designs) as plain-text, Git-native artefacts that any actor with file access, human or AI, can read and author.
+Note is a method for capturing intent (needs, requirements, specifications, designs) as structured plain markdown that anyone with file access, human or AI, can read and write.
 
-## How these docs grow
+## Learn by doing
 
-The documentation grows as the method's increments land: each new part of Note arrives with the pages that teach it, tutorials for learning by doing and reference pages for looking things up.
-No chapter has landed yet; this front door is the whole site.
+- [Your first note](./tutorials/your-first-note.md): write one note by hand.
+
+## Look it up
+
+- [The note file](./reference/the-note-file.md): the file, its frontmatter, its body, what makes it well-formed.
+- [Identifiers](./reference/identifiers.md): the id, segment by segment.
+
+## Understand
+
+- [Why opaque ids](./explanation/why-opaque-ids.md): names change, citations do not.

@@ -2,7 +2,7 @@
 id: note:req:bdyv0zx
 name: Documentation is translatable
 kind: requirement
-status: draft
+status: current
 ---
 
 The end-user documentation is translatable to other languages,

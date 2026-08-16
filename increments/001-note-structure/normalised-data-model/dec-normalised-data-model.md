@@ -18,8 +18,7 @@ the markdown notation that implements the model enforces less than the model sta
 
 ## Decision
 
-The subset keeps to what ANSI and stock SQLite, the specification's well-formedness checker, both accept:
-VARCHAR, DATE, BOOLEAN, and INTEGER types, enumerations as check constraints, composite primary keys for edge tables.
+The subset keeps to what ANSI and stock SQLite, the specification's well-formedness checker, both accept: VARCHAR, DATE, BOOLEAN, and INTEGER types, enumerations as check constraints, composite primary keys for edge tables.
 Every constraint the markdown notation cannot enforce is stated in the SQL anyway, annotated with what compensates for it, or an honest none.
 The schema lives outside the specification, as an external record the specification cites: the specification restates no line of the DDL, so nothing drifts, and a future increment extends the schema without touching the specification that delivered it.
 

@@ -5,8 +5,7 @@ kind: requirement
 status: current
 ---
 
-The end-user documentation is translatable to other languages,
-with English (GB) served as the default.
+The end-user documentation is translatable to other languages, with English (GB) served as the default.
 
 ## Relations
 

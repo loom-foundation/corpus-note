@@ -5,8 +5,7 @@ kind: requirement
 status: current
 ---
 
-Every increment that introduces or changes a user-visible Note concept is incomplete
-until the canonical end-user documentation teaches that concept and accurately describes it as delivered.
+Every increment that introduces or changes a user-visible Note concept is incomplete until the canonical end-user documentation teaches that concept and accurately describes it as delivered.
 There is never a later documentation phase.
 
 ## Relations

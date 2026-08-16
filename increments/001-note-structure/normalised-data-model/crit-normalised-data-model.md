@@ -5,8 +5,7 @@ kind: acceptance-criterion
 status: current
 ---
 
-The schema file the specification cites as the model's record
-loads whole into a fresh in-memory database of stock SQLite without error;
+The schema file the specification cites as the model's record loads whole into a fresh in-memory database of stock SQLite without error;
 this checks the schema's well-formedness alone.
 The same input deliberately corrupted fails to load.
 

@@ -9,7 +9,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: ./check
   docs:
     # The docs renderer lives in the sibling app-note-docs-site repo; the
@@ -19,16 +19,16 @@ jobs:
     # resolves and the merge gate still proves the docs build.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: corpora/note
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: loom-foundation/app-note-docs-site
           path: apps/note-docs-site
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - run: npm install
         working-directory: apps/note-docs-site
       - run: npm run docs:build

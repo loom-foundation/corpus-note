@@ -16,9 +16,12 @@ Any folder serves; a note is a plain file and lives wherever you keep files.
 ## 2. Choose a namespace
 
 Every id starts with a namespace, the name of the body of work your notes belong to, chosen once for the whole corpus.
-Every id carries it, so renaming it later means sweeping everything you can edit and breaks anything you cannot, like a citation already fixed in commit history, or someone else's notes citing yours under the old name; choose it as if it were permanent.
 
-Anchor it to a name already registered to you, a domain or a repository, and no one else's ids can ever collide with yours.
+> [!IMPORTANT]
+> Renaming it later may break citations fixed in commit history or someone else's notes citing yours under the old name, so choose it as if it were permanent.
+
+> [!TIP]
+> Anchor it to a name already registered to you, a domain or a repository, and no one else's ids can ever collide with yours.
 
 This tutorial's body of work is a garden, so the namespace is `garden`.
 
@@ -46,6 +49,9 @@ Silence means the opaque is unused and yours.
 This note will record an idea, so its kind is `idea`; a short kind serves as its own segment in the id.
 Assembled: `garden:idea:7fjq3ka`.
 
+> [!NOTE]
+> Wondering why the id is drawn characters rather than a meaningful name? [Why opaque ids](../explanation/why-opaque-ids.md) holds the reasoning; the tutorial does not depend on it.
+
 ## 4. Write the note
 
 Create `tomatoes.md`:
@@ -70,6 +76,9 @@ Read it back as four fields, a blank line, and a lead:
 - After the closing `---` comes exactly one blank line, then the lead: one statement of the note's substance, with no heading above it.
 
 That field order is the recommended one, so notes diff cleanly side by side.
+
+The file name `tomatoes.md` is a navigation aid: it helps you find the note in the file system, and it is no part of the identity.
+The next step proves that.
 
 ## 5. Try to break the identity
 

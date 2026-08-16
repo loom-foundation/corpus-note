@@ -39,7 +39,7 @@ Draw seven characters from this alphabet:
 Any source of characters serves; say you drew `7fjq3ka`.
 
 > [!NOTE]
-> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](../explanation/why-opaque-ids.md).
+> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](./why-opaque-ids.md).
 
 Confirm nobody drew it before you:
 
@@ -109,4 +109,4 @@ Nothing you do around a note can change what it is.
 
 The end state, checkable in one line: the grep above prints exactly one path, whatever you renamed the file to along the way.
 
-The full rules of the file are in [The note file](../reference/the-note-file.md), the full rules of the id in [Identifiers](../reference/identifiers.md), and the reasoning in [Why opaque ids](../explanation/why-opaque-ids.md).
+The full rules of the file are in [The note file](../reference/the-note-file.md), the full rules of the id in [Identifiers](../reference/identifiers.md), and the reasoning in [Why opaque ids](./why-opaque-ids.md).

@@ -57,7 +57,7 @@ Each corpus configures its own length, and the declared length governs new ids o
 Mixed lengths are lawful within one namespace, and two opaques of different lengths never collide, so raising the length widens the space for new ids with no re-mint.
 
 > [!NOTE]
-> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](../explanation/why-opaque-ids.md).
+> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](../guide/why-opaque-ids.md).
 
 ## Comparing ids
 

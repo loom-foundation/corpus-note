@@ -1,0 +1,16 @@
+# What is Note?
+
+Note is a method for capturing intent (e.g.: terms, needs, requirements, etc.) and specifications (e.g.: designs, verifications, etc.) as structured plain markdown. Anyone with file access (human or AI) can participate, read, and write.
+
+## Learn by doing
+
+- [Your first note](./your-first-note.md): write one note by hand.
+
+## Look it up
+
+- [The note file](../reference/the-note-file.md): the file, its frontmatter, its body, what makes it well-formed.
+- [Identifiers](../reference/identifiers.md): the id, segment by segment.
+
+## Understand
+
+- [Why opaque ids](./why-opaque-ids.md): names change, citations do not.

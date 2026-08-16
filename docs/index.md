@@ -1,16 +1,25 @@
-# Note
+---
+layout: home
 
-Note is a method for capturing intent (needs, requirements, specifications, designs) as structured plain markdown that anyone with file access, human or AI, can read and write.
+hero:
+  name: Note
+  tagline: A method for capturing intent and specifications as structured plain markdown. Anyone with file access (human or AI) can participate, read, and write.
+  actions:
+    - theme: brand
+      text: Get started
+      link: /guide/your-first-note
+    - theme: alt
+      text: What is Note?
+      link: /guide/introduction
 
-## Learn by doing
-
-- [Your first note](./tutorials/your-first-note.md): write one note by hand.
-
-## Look it up
-
-- [The note file](./reference/the-note-file.md): the file, its frontmatter, its body, what makes it well-formed.
-- [Identifiers](./reference/identifiers.md): the id, segment by segment.
-
-## Understand
-
-- [Why opaque ids](./explanation/why-opaque-ids.md): names change, citations do not.
+features:
+  - title: Learn by doing
+    details: Write one note by hand, then try to break its identity and fail.
+    link: /guide/your-first-note
+  - title: Look it up
+    details: The note file and its identifiers, stated exactly and completely.
+    link: /reference/the-note-file
+  - title: Understand
+    details: 'Why ids are opaque: names change, citations do not.'
+    link: /guide/why-opaque-ids
+---

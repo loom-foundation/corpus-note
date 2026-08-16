@@ -1,7 +1,7 @@
 """The tutorial's worked example behaves as the docs teach.
 
 Exercises docs/examples/first-note/note.md, the exact file built by
-docs/tutorials/your-first-note.md.
+docs/guide/your-first-note.md.
 If the taught behaviour changes, this fails before a reader does.
 
 @intent verifies: note:crit:b6wpk5s

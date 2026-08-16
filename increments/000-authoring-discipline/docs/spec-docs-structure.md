@@ -10,8 +10,9 @@ Which shape and why is the decision's ([The documentation follows Diátaxis](./d
 
 ## The tree
 
-The documentation is one standing tree of plain markdown pages under `docs/`, one directory per Diátaxis mode: `tutorials/`, `how-to/`, `reference/`, `explanation/`.
-A mode directory exists once its first page lands, never before.
+The documentation is one standing tree of plain markdown pages under `docs/`, split at the top level into `guide/` and `reference/`, the split carried in the URL structure.
+`guide/` carries the tutorial, how-to, and explanation modes; `reference/` carries the reference mode.
+`docs/index.md` is the landing page and `guide/introduction.md` the introduction.
 
 ## One job per page
 
@@ -26,7 +27,8 @@ A page needing two of these jobs is two pages.
 
 ## The front door
 
-`docs/index.md` orients in one screen: what Note is, the ways in, and the map of what stands.
+`docs/index.md` is the landing page, offering the ways in.
+`guide/introduction.md` orients in one screen: what Note is, the ways in, and the map of what stands.
 
 ## Self-containment
 

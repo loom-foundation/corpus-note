@@ -2,7 +2,7 @@
 id: note:dec:cvsp8fc
 name: Frontmatter authors substance
 kind: decision
-status: draft
+status: current
 ---
 
 A frontmatter field carries substance the author asserts, never a fact derived from elsewhere or a circumstance of the artefact's making.

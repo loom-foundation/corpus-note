@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Note
-  tagline: A method for capturing intent as structured plain markdown that anyone with file access, human or AI, can read and write.
+  tagline: A method for capturing intent and specifications as structured plain markdown. Anyone with file access (human or AI) can participate, read, and write.
   actions:
     - theme: brand
       text: Get started

@@ -61,4 +61,4 @@ Go, Rust, Deno: rejected; each brings a compiled or single-binary toolchain no c
 
 ## Driven by
 
-The owner's direction that the methodology carries automated tests, and continuous integration gating pull-request merges, with one script contributors run before submitting and the GitHub Action reuses verbatim.
+The requirement that the methodology carries automated tests, and continuous integration gating pull-request merges, with one script contributors run before submitting and the GitHub Action reuses verbatim.

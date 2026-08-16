@@ -41,3 +41,7 @@ The opaque already finds the artefact, so the kind adds nothing a key needs; a m
 Kind immutability per artefact was weighed and rescues none of this.
 
 No segment at all, a two-part `namespace:opaque`: rejected; it saves a few characters but forfeits the self-describing citation, the segment's whole earnings once uniqueness is namespace-wide.
+
+The full kind token as the id's middle, the `kind` field dropped: rejected, though narrowly; it would leave one spelling per file and delete the mismatch machinery.
+It lengthens the id at every citation surface, to 33 characters at the worst kind, and it removes the frontmatter surface tools, templates, and kind declarations read.
+The abbreviations were also judged more readable in relation lines than the full tokens, not merely shorter.

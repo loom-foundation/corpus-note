@@ -12,7 +12,7 @@ For every increment the requirement covers, all of the following hold for the af
 - Every corpus citation in the affected pages resolves to a current artefact.
 - Every worked example in the affected pages is a real file, exercised by an automated test that fails when the behaviour the example teaches changes.
 - The affected pages describe the resulting system, not the increment's history, and promise nothing unimplemented.
-- Every affected page, checked against the adopted [Note-authoring standard](./req-authoring-standard.md){id=note:req:kkn7wtj}, shows no departure.
+- Every affected page, checked against the adopted [Note-authoring standard](../qa/req-authoring-standard.md){id=note:req:kkn7wtj}, shows no departure.
 
 ## Relations
 

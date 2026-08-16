@@ -47,7 +47,7 @@ A custom YAML meta-schema: rejected; a private format, with none of the discipli
 
 ## Relations
 
-- upholds: [Single source of truth](../../../note-authoring/prin-single-source-of-truth.md){id=authoring:prin:hgmwdy8}
+- upholds: [Single source of truth](../../../../note-authoring/prin-single-source-of-truth.md){id=authoring:prin:hgmwdy8}
 
 ## Driven by
 

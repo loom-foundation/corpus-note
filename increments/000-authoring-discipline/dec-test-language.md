@@ -17,21 +17,7 @@ One script must run identically on a contributor's macOS or Linux machine and on
 ## Decision
 
 Tests live under `tests/` as `test_*.py` files, one concern per file, discovered by convention with no registry to maintain.
-The entry point is `check` at the corpus root:
-
-```sh
-#!/bin/sh
-# All corpus checks. CI runs exactly this.
-# unittest exits 5 when no tests exist yet; that is not a failure.
-set -eu
-cd "$(dirname "$0")"
-python3 -m unittest discover -s tests -v || {
-  s=$?
-  [ "$s" -eq 5 ] && exit 0
-  exit "$s"
-}
-```
-
+The entry point is the `check` file at the corpus root, the single home of the script: unittest discovery over `tests/`, verbose, an empty suite tolerated (unittest's exit status 5 is not a failure).
 The GitHub Action step is checkout, then `./check` on `ubuntu-latest`; nothing else is installed or configured.
 The checks are accelerating tooling; no artefact ever requires them.
 

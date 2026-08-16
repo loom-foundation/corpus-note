@@ -4,7 +4,7 @@ An id names one note, permanently.
 It is three colon-separated segments:
 
 ```
-id = namespace ":" kind-segment ":" opaque
+id = namespace:kind:opaque
 ```
 
 Example: `garden:idea:7fjq3ka`.

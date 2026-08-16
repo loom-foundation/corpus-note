@@ -20,10 +20,10 @@ Every id starts with a namespace, the name of the body of work your notes belong
 > [!IMPORTANT]
 > Renaming it later may break citations fixed in commit history or someone else's notes citing yours under the old name, so choose it as if it were permanent.
 
+This tutorial's body of work is a garden, so the namespace is `garden`.
+
 > [!TIP]
 > Anchor it to a name already registered to you, a domain or a repository, and no one else's ids can ever collide with yours.
-
-This tutorial's body of work is a garden, so the namespace is `garden`.
 
 ## 3. Mint an id
 
@@ -38,6 +38,9 @@ Draw seven characters from this alphabet:
 (`i`, `l`, `o` and `u` are left out, so no character can be misread.)
 Any source of characters serves; say you drew `7fjq3ka`.
 
+> [!NOTE]
+> Curious why an opaque id, or why these characters are left out? See [Why opaque ids](../explanation/why-opaque-ids.md).
+
 Confirm nobody drew it before you:
 
 ```sh
@@ -48,9 +51,6 @@ Silence means the opaque is unused and yours.
 
 This note will record an idea, so its kind is `idea`; a short kind serves as its own segment in the id.
 Assembled: `garden:idea:7fjq3ka`.
-
-> [!NOTE]
-> Wondering why the id is drawn characters rather than a meaningful name? [Why opaque ids](../explanation/why-opaque-ids.md) holds the reasoning; the tutorial does not depend on it.
 
 ## 4. Write the note
 

@@ -35,7 +35,9 @@ Choose it as if it were permanent.
 The note's `kind` field is authoritative; the segment in the id is rendered from it.
 Every kind carries exactly one segment, a short form no other kind shares.
 
-A segment disagreeing with `kind` is a display defect, repaired from the note's own `kind`; it never changes which note the id names.
+A segment disagreeing with `kind` is a display defect, repaired from the note's own `kind` wherever the spelling can be edited; it never changes which note the id names.
+A segment already fixed where you cannot edit, a commit message for instance, keeps the kind the note had when cited; it is history, not a defect, and is never rewritten.
+To find every mention of a note, match the namespace and the opaque, never the full spelling, which a wrong segment could hide.
 
 A well-formed kind token nothing yet defines still makes a note; the unknown token is a warning, never a bar on the file.
 

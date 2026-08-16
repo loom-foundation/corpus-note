@@ -17,7 +17,8 @@ Four fields are required:
 | `kind` | The kind token: lowercase letters with single hyphens between words. |
 | `status` | A token recording where the note stands. |
 
-The recommended order is `id`, `name`, `kind`, `status`, optional fields after them, so same-shaped notes diff precisely. Any other order is never rejected while the required fields stand.
+The recommended order is `id`, `name`, `kind`, `status`, optional fields after them, so same-shaped notes diff precisely.
+Any other order is never rejected while the required fields stand.
 
 Two quoting rules cover everything a writer meets:
 

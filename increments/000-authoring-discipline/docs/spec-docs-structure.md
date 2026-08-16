@@ -2,7 +2,7 @@
 id: note:spec:wdq47xk
 name: The documentation structure
 kind: specification
-status: current
+status: draft
 ---
 
 This specification fixes the operational shape of the end-user documentation: the tree, the job of each page, the front door, self-containment, and the worked examples.
@@ -30,8 +30,8 @@ A page needing two of these jobs is two pages.
 
 ## Self-containment
 
-Pages neither cite nor presuppose the corpus's internals.
-A link leaving the tree fails the build.
+Self-containment is the cited decision's stance.
+This specification adds its enforcement: a link leaving the tree fails the build.
 
 ## Worked examples
 

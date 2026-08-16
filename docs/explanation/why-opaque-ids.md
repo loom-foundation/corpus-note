@@ -23,14 +23,17 @@ It fails for a human reason.
 The readable key is the one people remember, type, and cite, so it stays load-bearing at every surface where writing happens, and it strands citations all the same.
 A second name does not relieve the first of its burden; it just gives the concrete two things to set around.
 
-## The middle segment is a check digit
+## The middle segment is for the reader
 
 `garden:idea:7fjq3ka` seems to smuggle meaning back in: `idea` reads like part of a name.
-It is redundancy, not identity.
+It is not; identity is the namespace and the opaque, and the middle segment carries no part of it.
 
-The opaque alone finds at most one note in its namespace, so when the middle segment disagrees with the note's own kind, the repair is deterministic: the segment is rewritten from the note, and nothing dangles.
+The segment is there for the reader.
+An id travels far from its file, into relations, code, and conversation, and the segment says what sort of note it names without your opening anything: a relation pointing at `garden:idea:7fjq3ka` visibly points at an idea.
 
-Like the last digit of a card number, it catches transcription errors without carrying anything the rest does not; what it earns on top is that an id met far from home still says what sort of note it names.
+Because the segment is outside identity, it can never break anything.
+The opaque alone finds the note, so a segment that disagrees with the note's own kind is just a wrong label, rewritten from the note itself; nothing dangles.
+And because a note never changes its kind, the label cannot go stale.
 
 ## The price
 

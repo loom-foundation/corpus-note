@@ -58,6 +58,10 @@ CREATE TABLE artefact (
 --   a rename leaves it untouched. Immutability is history, which no DDL
 --   states. Compensated by review over git history; a changed id reads
 --   as a new artefact.
+-- artefact identity: the kind-segment is never stored in a row; it is
+--   always derived through the kind join, the schema's own statement
+--   that the segment is not identity. Compensated by the sweep rule:
+--   citers are matched on namespace and opaque alone.
 -- kind.token: lowercase letters with single hyphens between words; the
 --   lowercase check holds, the letters-and-hyphens shape has no
 --   portable constraint. Compensated by nothing yet; checkable from

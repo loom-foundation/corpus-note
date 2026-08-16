@@ -45,7 +45,8 @@ Every artefact carries an immutable `id` of three colon-separated segments:
 The namespace names the one sustained body of work whose intent the corpus holds, declared once in the corpus's manifest.
 It is chosen short, lowercase, and distinctive, because it partitions the identity space: distinct bodies of work choose distinct namespaces, so ids minted for different systems never collide, and two systems that chose the same name cannot be brought into one working context without their ids meaning two things at once.
 Anchoring it to something already globally registered that the corpus's owner controls, a domain or a repository, removes that collision for free.
-The namespace is the one piece of configuration a corpus cannot revise later: every id ever minted carries it, and ids are immutable.
+Renaming the namespace later is a mechanical rewrite of every id's spelling in everything the corpus's owner can edit, the corpus and its code included; the opaques themselves survive unchanged.
+What a rename breaks is everything the owner cannot edit: citations already fixed in commit history, and citations held in other bodies of work; the namespace is chosen as if permanent.
 
 ### The kind and its segment
 
@@ -53,6 +54,7 @@ The `kind` field carries the kind token, and every kind carries exactly one segm
 The kind-segment in the id is rendered from the authoritative `kind` field.
 A well-formed token no register defines still makes an artefact; the unknown token is reported as a warning, never a bar on the file.
 A segment disagreeing with `kind`, in an artefact's own id as in any other spelling of it, is a display defect reported with the canonical rendering proposed, never a failure of the id to denote.
+A segment already fixed in an immutable surface, a commit trailer or a published copy, records the target's kind as of the citation and is read historically; it is never a defect and never repaired.
 
 ### The opaque
 
@@ -64,8 +66,10 @@ Mixed lengths are lawful within one namespace, and two opaques of different leng
 
 Identity is the namespace and the opaque.
 The two ends of the id denote the artefact; the kind-segment between them is display and self-description, derived from `kind`.
-The segment is error-detecting redundancy rather than a key: the opaque alone finds at most one artefact, so a wrong segment repairs deterministically from the target's own `kind`.
+The segment is an aid, not a key: it lets a reader use relations and verbs against the right kind from the id alone, and because the opaque alone finds at most one artefact, a wrong segment repairs deterministically from the target's own `kind`.
+The segment stays outside identity because the rendering of a kind can change even though an artefact's kind cannot; identity holds nothing a register controls.
 Two ids denote the same artefact exactly when their namespaces and their opaques are equal, the opaques compared case-insensitively.
+A sweep for an artefact's citers matches the namespace and the opaque, never the full spelling, so a mis-rendered segment can never hide a citation.
 The id is minted once and never changes; a move, a rename, or a revision leaves it untouched.
 
 ### Minting an id by hand

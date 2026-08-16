@@ -12,11 +12,24 @@ jobs:
       - uses: actions/checkout@v4
       - run: ./check
   docs:
+    # The docs renderer lives in the sibling app-note-docs-site repo; the
+    # docs SOURCE stays here. Both are checked out mirroring the west
+    # workspace layout (<workspace>/corpus/note, <workspace>/apps/
+    # app-note-docs-site), so the renderer's relative srcDir resolves and
+    # the merge gate still proves the docs build.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: corpus/note
+      - uses: actions/checkout@v4
+        with:
+          repository: loom-foundation/app-note-docs-site
+          path: apps/app-note-docs-site
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install
+        working-directory: apps/app-note-docs-site
       - run: npm run docs:build
+        working-directory: apps/app-note-docs-site

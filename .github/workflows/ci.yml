@@ -12,12 +12,14 @@ jobs:
       - uses: actions/checkout@v7
       - run: ./check
   docs:
-    # The docs renderer lives in the sibling app-note-docs-site repo; the
-    # docs SOURCE stays here. Four repositories are checked out mirroring the
-    # west workspace, because the renderer resolves its siblings through the
-    # root: the corpus it renders, the renderer itself, org for the brand
-    # assets it copies in at build time, and the workspace whose west.yml
-    # marks the root, symlinked into place exactly as a real checkout does.
+    # The docs renderer lives in the sibling app-note-docs-site repo; the docs
+    # SOURCE stays here. The renderer resolves its siblings through the
+    # workspace root, so it is built inside one: the manifest repository is
+    # checked out and west places what it names, at the paths and revisions
+    # west.yml declares.
+    #
+    # The corpus is not among them. This job renders the branch under test, so
+    # it is checked out here and left where west would have put it.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -25,17 +27,11 @@ jobs:
           path: corpora/note
       - uses: actions/checkout@v7
         with:
-          repository: loom-foundation/app-note-docs-site
-          path: apps/note-docs-site
-      - uses: actions/checkout@v7
-        with:
-          repository: loom-foundation/org
-          path: org
-      - uses: actions/checkout@v7
-        with:
           repository: loom-foundation/workspace
           path: workspace
-      - run: ln -s workspace/west.yml west.yml
+      - run: pipx install west
+      - run: west init -l workspace
+      - run: west update --narrow -o=--depth=1 app-note-docs-site org
       - uses: actions/setup-node@v7
         with:
           node-version: 24

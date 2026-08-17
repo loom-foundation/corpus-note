@@ -29,7 +29,10 @@ jobs:
         with:
           repository: loom-foundation/workspace
           path: workspace
-      - run: pipx install west
+      # west is held to a minor series: unpinned, a release of it could stop
+      # every build here without a line changing in any Loom repository. A
+      # major version is where the manifest format itself may change.
+      - run: pipx install 'west~=1.5'
       - run: west init -l workspace
       - run: west update --narrow -o=--depth=1 app-note-docs-site org
       - uses: actions/setup-node@v7
@@ -39,3 +42,28 @@ jobs:
         working-directory: apps/note-docs-site
       - run: npm run docs:build
         working-directory: apps/note-docs-site
+
+  publish:
+    # The docs these words belong to are published from app-note-docs-site,
+    # whose workflow only wakes for its own pushes. Left alone, a merge here
+    # would sit unpublished until something unrelated landed there. This tells
+    # it to rebuild and redeploy, which it does on the same terms as a push of
+    # its own.
+    #
+    # Only once the words are known to render: the site is built from this
+    # branch above, and a merge that cannot be rendered is not one to publish.
+    #
+    # The token is a repository secret because a workflow's built-in one is
+    # scoped to the repository it runs in and cannot start a run elsewhere.
+    # `gh` and `jq` are both on the runner image, so no action is installed to
+    # send one HTTP request.
+    needs: docs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          jq -n --arg corpus "$GITHUB_SHA" \
+            '{event_type: "corpus-updated", client_payload: {corpus: $corpus}}' |
+            gh api repos/loom-foundation/app-note-docs-site/dispatches --input -
+        env:
+          GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}

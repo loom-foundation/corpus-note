@@ -1,11 +1,11 @@
 ---
 layout: home
-title: "Note: Intent held in pattern"
+title: "Note: Intent, held in pattern"
 
 hero:
   name: Note
-  text: Intent held in pattern
-  tagline: A method for capturing intent and specifications in structured markdown. Anyone with file access, human or AI, can participate in full, with no special tools.
+  text: Intent, held in pattern.
+  tagline: Note turns intent into a living, verifiable blueprint, giving humans and AI the clarity to build the right thing together and always know why.
   actions:
     - theme: brand
       text: Get started

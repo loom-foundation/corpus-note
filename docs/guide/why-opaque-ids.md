@@ -5,7 +5,7 @@ description: "Why a Note id carries no words: wording improves, and the citation
 # Why opaque ids
 
 A note and its name are two things.
-The name is wording, and wording improves: the label that felt right yesterda reads wrong tomorrow, and renaming is routine, healthy work.
+The name is wording, and wording improves: the label that felt right yesterday reads wrong tomorrow, and renaming is routine, healthy work.
 
 A citation is not.
 Once an id is written into a commit message, a report, or a printed page, that surface never updates again.

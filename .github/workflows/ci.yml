@@ -53,17 +53,43 @@ jobs:
     # Only once the words are known to render: the site is built from this
     # branch above, and a merge that cannot be rendered is not one to publish.
     #
+    # And only when the site would come out different. Everything the site
+    # renders is under docs/, so a push that leaves that tree alone would
+    # rebuild and republish an identical site.
+    #
     # The token is a repository secret because a workflow's built-in one is
-    # scoped to the repository it runs in and cannot start a run elsewhere.
-    # `gh` and `jq` are both on the runner image, so no action is installed to
-    # send one HTTP request.
+    # scoped to the repository it runs in and cannot start a run elsewhere. It
+    # needs no more than permission to start runs there, so it carries Actions
+    # and nothing else: the endpoint below asks a named workflow to run, where
+    # a repository dispatch would have demanded write access to the whole of
+    # that repository's contents to send the same request.
     needs: docs
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          jq -n --arg corpus "$GITHUB_SHA" \
-            '{event_type: "corpus-updated", client_payload: {corpus: $corpus}}' |
-            gh api repos/loom-foundation/app-note-docs-site/dispatches --input -
+      - uses: actions/checkout@v7
+        with:
+          # The whole history, so the commit this push moved from is present to
+          # be compared against.
+          fetch-depth: 0
+      - id: docs
+        # An unreadable starting point (a first push, or one whose predecessor
+        # a force push has orphaned) publishes rather than guesses: a needless
+        # deploy costs two minutes, a missed one leaves the site wrong.
+        run: |
+          before='${{ github.event.before }}'
+          if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ] ||
+             ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+            echo 'No readable previous commit; publishing rather than guessing.'
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          elif git diff --quiet "$before" "$GITHUB_SHA" -- docs/; then
+            echo 'Nothing under docs/ moved; the site would come out identical.'
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            git diff --name-only "$before" "$GITHUB_SHA" -- docs/
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.docs.outputs.changed == 'true'
+        run: gh workflow run checks.yml --repo loom-foundation/app-note-docs-site --ref main
         env:
           GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}

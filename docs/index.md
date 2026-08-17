@@ -4,7 +4,7 @@ title: "Intent, held in pattern"
 
 hero:
   name: Note
-  text: Intent, held in pattern.
+  text: Intent, held in pattern
   tagline: Note turns intent into a living, verifiable blueprint, giving humans and AI the clarity to build the right thing together and always know why.
   actions:
     - theme: brand

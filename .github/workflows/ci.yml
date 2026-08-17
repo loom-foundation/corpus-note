@@ -43,19 +43,21 @@ jobs:
       - run: npm run docs:build
         working-directory: apps/note-docs-site
 
-  publish:
-    # The docs these words belong to are published from app-note-docs-site,
-    # whose workflow only wakes for its own pushes. Left alone, a merge here
-    # would sit unpublished until something unrelated landed there. This tells
-    # it to rebuild and redeploy, which it does on the same terms as a push of
-    # its own.
+  publish-note-docs:
+    # The user documentation under docs/ is published at
+    # note.theloommethod.org, but the site that serves it is built and deployed
+    # from app-note-docs-site, whose workflow only wakes for its own pushes.
+    # Left alone, a merge here changed the documentation without publishing it.
+    # This asks that repository to rebuild and redeploy, which it does on the
+    # same terms as a push of its own.
     #
-    # Only once the words are known to render: the site is built from this
-    # branch above, and a merge that cannot be rendered is not one to publish.
+    # Only once the documentation is known to render: the site is built from
+    # this branch above, and a merge that cannot be rendered is not one to
+    # publish.
     #
-    # And only when the site would come out different. Everything the site
-    # renders is under docs/, so a push that leaves that tree alone would
-    # rebuild and republish an identical site.
+    # And only when the published site would come out different. docs/ is the
+    # documentation the site renders; the rest of this repository is the Note
+    # corpus and its checks, which the site never reads.
     #
     # The token is a repository secret because a workflow's built-in one is
     # scoped to the repository it runs in and cannot start a run elsewhere. It
@@ -72,7 +74,7 @@ jobs:
           # The whole history, so the commit this push moved from is present to
           # be compared against.
           fetch-depth: 0
-      - id: docs
+      - id: note-docs
         # An unreadable starting point (a first push, or one whose predecessor
         # a force push has orphaned) publishes rather than guesses: a needless
         # deploy costs two minutes, a missed one leaves the site wrong.
@@ -89,7 +91,7 @@ jobs:
             git diff --name-only "$before" "$GITHUB_SHA" -- docs/
             echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
-      - if: steps.docs.outputs.changed == 'true'
+      - if: steps.note-docs.outputs.changed == 'true'
         run: gh workflow run checks.yml --repo loom-foundation/app-note-docs-site --ref main
         env:
           GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}

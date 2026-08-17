@@ -8,7 +8,7 @@ Note is a method for capturing intent (e.g.: terms, needs, requirements, etc.) a
 
 ## Learn by doing
 
-- [Your first note](./your-first-note.md): write one note by hand.
+- [Your first note](./your-first-note.md): write a note by hand.
 
 ## Look it up
 

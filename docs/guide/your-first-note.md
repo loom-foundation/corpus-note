@@ -1,3 +1,7 @@
+---
+description: "Write one note by hand with an editor and a shell, then try to break its identity and fail."
+---
+
 # Your first note
 
 You will write one note by hand, then try to break its identity and fail.

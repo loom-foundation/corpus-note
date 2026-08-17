@@ -1,3 +1,7 @@
+---
+description: "The note file in full: the frontmatter fields, the body, and what makes a file well-formed."
+---
+
 # The note file
 
 A note is a single UTF-8 text file: YAML frontmatter, one blank line, a markdown body.
@@ -34,11 +38,11 @@ A note written against a later reading of the format therefore stays valid to an
 
 Exactly one blank line separates the closing `---` from the lead.
 
-The lead is unheaded: one statement of the note's substance, with no level-1 heading anywhere and the name never repeated as a heading.
+The lead is unheaded. One statement of the note's substance, with no level-1 heading anywhere and the name never repeated as a heading.
 
-Section headings are level 2; each kind fixes their recommended order, and a different order is never rejected while the sections the kind requires stand.
+Section headings are level 2. Each kind fixes their recommended order, and a different order is never rejected while the sections the kind requires stand.
 
 ## Well-formed
 
-A note is well-formed with a well-formed envelope, the four required fields, whatever its kind requires of it, and a lead.
+A note is well-formed when its envelope is valid, the four required fields are present, whatever its kind requires is met, and a lead is given.
 The file's name is a navigation convenience, never the identity, so a name alone never decides whether a file is a valid note.

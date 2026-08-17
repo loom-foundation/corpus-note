@@ -1,10 +1,14 @@
+---
+description: "What Note is and what it is for: intent and specifications captured as plain markdown that any person or AI agent can read and write."
+---
+
 # What is Note?
 
-Note is a method for capturing intent (e.g.: terms, needs, requirements, etc.) and specifications (e.g.: designs, verifications, etc.) as structured plain markdown. Anyone with file access (human or AI) can participate, read, and write.
+Note is a method for capturing intent (e.g.: terms, needs, requirements, etc.) and specifications (e.g.: designs, verifications, etc.) in structured markdown. Anyone with file access (human or AI) can participate, read, and write.
 
 ## Learn by doing
 
-- [Your first note](./your-first-note.md): write one note by hand.
+- [Your first note](./your-first-note.md): write a note by hand.
 
 ## Look it up
 

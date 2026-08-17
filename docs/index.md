@@ -1,11 +1,11 @@
 ---
 layout: home
-title: "Note: capturing intent as plain markdown"
+title: "Note: Intent held in pattern"
 
 hero:
   name: Note
   text: Intent held in pattern
-  tagline: A method for capturing intent and specifications in structured markdown. Anyone with file access (human or AI) can participate, read, and write.
+  tagline: A method for capturing intent and specifications in structured markdown. Anyone with file access, human or AI, can participate in full, with no special tools.
   actions:
     - theme: brand
       text: Get started

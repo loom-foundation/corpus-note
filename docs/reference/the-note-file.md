@@ -1,3 +1,7 @@
+---
+description: "The note file in full: the frontmatter fields, the body, and what makes a file well-formed."
+---
+
 # The note file
 
 A note is a single UTF-8 text file: YAML frontmatter, one blank line, a markdown body.

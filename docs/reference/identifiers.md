@@ -1,3 +1,7 @@
+---
+description: "The Note id segment by segment: namespace, kind, and opaque, how ids compare, and how to mint one by hand."
+---
+
 # Identifiers
 
 Note IDs are composed of three colon-separated segments:

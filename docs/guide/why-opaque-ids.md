@@ -1,3 +1,7 @@
+---
+description: "Why a Note id carries no words: wording improves, and the citations already set in commits and reports never update."
+---
+
 # Why opaque ids
 
 A note and its name are two things.

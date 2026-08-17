@@ -1,5 +1,6 @@
 ---
 layout: home
+title: "Note: capturing intent as plain markdown"
 
 hero:
   name: Note

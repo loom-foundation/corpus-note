@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Note: Intent, held in pattern"
+title: "Intent, held in pattern"
 
 hero:
   name: Note

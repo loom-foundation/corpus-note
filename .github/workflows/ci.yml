@@ -94,4 +94,4 @@ jobs:
       - if: steps.note-docs.outputs.changed == 'true'
         run: gh workflow run checks.yml --repo loom-foundation/app-note-docs-site --ref main
         env:
-          GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_SITE_BUILD_DEPLOY_TOKEN }}
